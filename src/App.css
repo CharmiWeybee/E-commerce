@@ -2,18 +2,15 @@
   text-align: center;
 }
 
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,23 +19,103 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 } */
+
 
 .header{
   background-color: #131921;
   color: white;
   min-height: 50px;
+}
+.all-cards{
+  margin-top:10px
+}
+
+
+.card-img-top{
+  height: 398px;
+  width: 292px !important;
+}
+.main-card{
+ flex-direction: row;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+.card-price{
+  font-weight: bold;
+}
+.add-to-card-btn{
+  width: 50%;
+}
+#details{
+text-align: center;
+}
+.card-footer{
+  text-align: center;
+}
+
+#count-badge{
+ border-radius: 50%;
+  padding: 1px 5px;
+  float: right;
+}
+.cart-card{
+  margin-bottom: 10px;
+  width: auto;
+  background-color:rgba(0,0,0,.03) !important;
+}
+/* #cart-item-name{
+  width: 29.666667%;
+} */
+#cart-item-buttons{
+      width: 29.666667%;
+}
+#cart-item-price{
+      width: 36.333333%;
+}
+.card-cart-heading{
+  text-align: center;
+}
+
+#remove-btn{
+  margin-bottom: 10px;
+}
+#add-btn{
+  margin-bottom: 10px;
+}
+.card-name{
+  font-weight: bold;
+}
+.grand-total{
+  font-weight: bold;
+}
+.card-cart-heading{
+  height: 45px;
+  background-color: #dadada;
+}
+.product-option{
+  margin-right: 20px;
+  font-size: 24px;
+  float: right;
+  margin-top: 10px
+}
+#cart, #home{
+  width: 70px;
+  height: 40px;
+  float: right;
+  margin-top:7px;
+  margin-right: 30px;
+  background-color: gray;
+  border-radius: 05px;
+}
+.cart-link, .home-link{
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+.cart-container{
+  margin-top: 30px;
+}
+#prod-cards{
+  min-width: 50px;
 }
