@@ -40,7 +40,7 @@ class Main extends Component {
             <div>
                 <Header></Header>
                 <SideBar></SideBar>
-                <ProductCard></ProductCard>
+                
                 {/* <Products /> */}
             </div>
         );
