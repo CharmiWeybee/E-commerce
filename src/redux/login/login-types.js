@@ -1,1 +1,0 @@
-export const SUBMIT_LOGIN_FORM = "SUBMIT_LOGIN_FORM"

@@ -1,1 +1,0 @@
-export const DETAIL_VIEW = "DETAIL_VIEW"

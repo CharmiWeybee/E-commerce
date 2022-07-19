@@ -1,54 +1,59 @@
-import React, { useState } from "react";
-import "../App.css";
-import { Header } from "../components/Header";
-import {Products} from '../components/Products'
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../redux/shopping/shopping-actions";
-import { detailView } from "../redux/detailView/detail-view-actions";
+// import React from "react";
+// import "../App.css";
+// import { Header } from "../components/Header";
 
-export const Main = () => {
-    const cartItemList = useSelector((state) => state.shop.cart);
+// import Products from './Products'
 
-    const dispatch = useDispatch();
-
-    const { items } = Products;
-    const [cartItems, setCartItems] = useState([]);
+// export const Main = () => {
   
+//     return (
+//         <>
+//             <div className="App ">
+//                 <Header ></Header>
+//                 <Products ></Products>
+//                 <div className="container mt-5">
+//                 </div>
+//             </div>
+//         </>
+//     );
+// };
 
-    console.log(cartItemList, "cartItemList 13");
+// export default Main;
 
-    const onAdd = (items) => {
-        const exist = cartItems.find((x) => x.id === items.id);
-        if (exist) {
-            setCartItems(
-                cartItems.map((x) =>
-                    x.id === items.id ? { ...exist, qty: exist.qty + 1 } : x
-                )
-            );
-        } else {
-            setCartItems([...cartItems, { ...items, qty: 1 }]);
-        }
-        dispatch(addToCart(items));
-    };
-    const onView = (items)=>{
-        dispatch(detailView(items));
-    }
 
-   
 
-    return (
-        <>
-            <div className="App ">
-                <Header countCartItems={cartItems?.length}  ></Header>
-                <Products onAdd={onAdd} product={items} onView={onView}></Products>
-                <div className="container mt-5">
-                </div>
+
+
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Products from "./Products";
+import '../App.css' ;
+import { Header } from "./Header";
+import {SideBar} from "./SideBar"
+import { ProductCard } from "./ProductCard"
+
+
+class Main extends Component {
+
+    render() {
+        return (
+            <div>
+                <Header></Header>
+                <SideBar></SideBar>
+                <ProductCard></ProductCard>
+                {/* <Products /> */}
             </div>
-        </>
-    );
-};
+        );
+    }
+}
 
-export default Main;
+const mapStateToProps = state => ({
+    item: state.products.item,
+    loading: state.products.loading,
+    error: state.products.error
+});
+
+export default connect(mapStateToProps)(Main);
 
 
 
