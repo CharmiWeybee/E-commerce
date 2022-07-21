@@ -3,7 +3,7 @@ import React from 'react'
 export const SideBar = (props) => {
     return (
 <div className="col-lg-3 d-none d-lg-block">
-    <p className="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100 sidebar-comp" data-toggle="collapse" >
+    <p className="btn shadow-none d-flex align-items-center justify-content-between bg-light text-white w-100 sidebar-comp" data-toggle="collapse" >
         <h6 className="m-0">Categories</h6>
         <i className="fa fa-angle-down text-dark"></i>
     </p>

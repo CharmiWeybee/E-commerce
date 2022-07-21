@@ -1,9 +1,11 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch} from "react-redux";
-import {submitLoginForm} from '../redux/login/login-actions'
+import { connect} from "react-redux";
+import { register } from "../actions/authAction";
 
-function Registration() {
+
+
+function Registration({ registerUser }) {
     const [value, setValue] = useState({
         first_name: "",
         last_name: "",
@@ -11,11 +13,11 @@ function Registration() {
         password: "",
         password_confirmation: "",
     });
-    const [error, setError] = useState({})
-    const dispatch = useDispatch()
+  
+    // const dispatch = useDispatch()
 
     const handleRegister = () => {
-        dispatch(submitLoginForm)
+        registerUser(value)
     }
 
 
@@ -62,7 +64,7 @@ function Registration() {
                         <div className="col-sm-10">
                             <input type="text" className="form-control" value={value.first_name} onChange={(e) => { setValue({ ...value, first_name: e.target.value }); }} />
                         </div>
-                        {Object.keys(error).includes("first_name") && <p>{error.first_name[0]}</p>}
+                        {/* {Object.keys(error).includes("first_name") && <p>{error.first_name[0]}</p>} */}
                     </div>
                     <div className="form-group row mt-2">
                         <label className="col-sm-2 col-form-label">Last Name</label>
@@ -98,12 +100,23 @@ function Registration() {
                 <div className='card-footer'>
                     <button className='btn btn-dark' onClick={handleRegister}>Register</button>
                 </div>
-
-
             </div>
 
         </>
     );
 }
 
-export default Registration;
+
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        
+    }
+};
+
+const mapDispatchToProps =
+{
+    registerUser: register
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);

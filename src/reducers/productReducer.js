@@ -1,5 +1,6 @@
 let initialState = {
     loading: false,
+    cart:[],
     item: [],
     error: null
 };
@@ -25,6 +26,24 @@ function reducer(state = initialState, action) {
                 loading: false,
                 error: action.payload.error,
                 item: []
+            };
+        case "ADD_TO_CART":
+            console.log('reducer ', action.payload.data.items)
+            return {
+                ...state,
+                cartList: action.payload.data.items
+            };
+        case "GET_CART":
+            return {
+                ...state,
+                cart: action.payload
+
+            };
+        case "VIEW_DETAILS":
+            return {
+                ...state,
+                loading: true,
+                item: {}
             };
         default:
             return state;

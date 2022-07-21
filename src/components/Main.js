@@ -28,21 +28,48 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Products from "./Products";
 import '../App.css' ;
-import { Header } from "./Header";
-import {SideBar} from "./SideBar"
-import { ProductCard } from "./ProductCard"
+// import { Header } from "./Header";
+// import {SideBar} from "./SideBar"
+// import { ProductCard } from "./ProductCard"
+import Registration from "./Registration";
+// import { Features } from "./Features";
+// import CartList from "./CartList";
+import Login from "./Login";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./Home";
+import DetailView from "./DetailView";
+import CartList from "./CartList";
 
 
 class Main extends Component {
 
     render() {
         return (
-            <div>
-                <Header></Header>
-                <SideBar></SideBar>
-                <ProductCard></ProductCard>
-                {/* <Products /> */}
-            </div>
+            // <div>
+            //     {/* <Header></Header> */}
+            //     <div className="d-flex">
+            //         {/* <SideBar></SideBar> */}
+            //         {/* <ProductCard></ProductCard> */}
+            //         {/* <Registration></Registration> */}
+            //     </div>
+            //         {/* <Features></Features> */}
+
+                
+            //     {/* <Products /> */}
+            //     <Login></Login>
+            //     {/* <CartList></CartList> */}
+            // </div>
+
+
+                <Routes>
+                    <Route path="/" element={<Login />}></Route>
+                    <Route path="/Register" element={<Registration/>} ></Route> 
+                    <Route path="/Home" element={<Home/>} ></Route> 
+                    <Route path="/Products" element={<Products />} ></Route> 
+                <Route path="/CartList" element={<CartList />} ></Route> 
+                </Routes>
+
+            // <DetailView></DetailView>
         );
     }
 }

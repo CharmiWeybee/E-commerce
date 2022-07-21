@@ -25,6 +25,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from 'react-router-dom';
 import Main from "./components/Main.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from "react-redux";
@@ -38,9 +39,11 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Main />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
     </Provider>
   );
 }

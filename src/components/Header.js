@@ -1,5 +1,7 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
+import { faSearch, faHeart, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 export const Header = (props) => {
@@ -18,7 +20,7 @@ export const Header = (props) => {
                             <input type="text" className="form-control" placeholder="Search for products" />
                                 <div className="input-group-append">
                                     <span className="input-group-text bg-transparent text-primary">
-                                        <i className="fa fa-search"></i>
+                                        <FontAwesomeIcon icon={faSearch} />
                                     </span>
                                 </div>
                         </div>
@@ -26,11 +28,11 @@ export const Header = (props) => {
                 </div>
                 <div className="col-lg-3 col-6 text-right">
                     <p  className="btn border">
-                        <i className="fas fa-heart text-primary"></i>
+                            <FontAwesomeIcon icon={faHeart} />
                         <span className="badge">0</span>
                     </p>
                     <p  className="btn border">
-                        <i className="fas fa-shopping-cart text-primary"></i>
+                            <FontAwesomeIcon icon={faShoppingCart} />
                         <span className="badge">0</span>
                     </p>
                 </div>
