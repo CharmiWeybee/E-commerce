@@ -45,6 +45,7 @@ class Main extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
             // <div>
             //     {/* <Header></Header> */}
             //     <div className="d-flex">
@@ -70,6 +71,14 @@ class Main extends Component {
                 </Routes>
 
             // <DetailView></DetailView>
+=======
+            <div>
+                <Header></Header>
+                <SideBar></SideBar>
+                
+                {/* <Products /> */}
+            </div>
+>>>>>>> d2261186ffc2a3265acc291dbae87bbc57f82605
         );
     }
 }
